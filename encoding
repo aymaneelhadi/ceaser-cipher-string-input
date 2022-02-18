@@ -1,0 +1,15 @@
+print('Entrez le chiffre à coder:')
+n= list(input().upper())
+m=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','W','X','Y','Z']*2
+print('k=')
+k=int(input())
+if (k>=26):
+    k=k%26
+for i in range(0,len(n)):
+         for j in range(0,len(m)):
+               if(n[i]==m[j]):
+                  n[i]=m[j+k]
+                  break
+s=""
+d=(s.join(n)).lower()
+print(d)
