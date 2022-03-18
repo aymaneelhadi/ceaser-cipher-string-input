@@ -1,0 +1,22 @@
+import requests
+
+from requests.auth import HTTPDigestAuth
+
+url = ''
+f = open(r" usenames file path", "r" ,encoding="utf8")
+g = open(r"passwords file path", "r" , encoding="utf8")
+
+i = f.readlines()
+j = g.readlines()
+
+
+for a in i:
+    for b in j:
+        response = requests.get(url,auth=HTTPDigestAuth(a[:-1],b[:-1]))
+        print("Response code:"+str(response.status_code))
+        if response.status_code == 200:
+            print(response.json())
+
+
+
+
